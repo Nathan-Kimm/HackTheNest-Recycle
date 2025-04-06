@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/scan.css">
     </head>
     <body>
-        
+        <video id="camera" autoplay playsinline></video>
+        <button id="captureButton">Take Photo</button>
+        <canvas id="canvas"></canvas>
+
+        <div class="bottom-nav">
+            <a href="/" class="tab">Home</a>
+            <a href="/scan" class="tab">Scanner</a>
+            <a href="/report" class="tab">Report</a>
+            <a href="./map" class="tab">Map</a>
+        </div>
+
+        <div class="info">
+            <h1>Material:</h1>
+            <h1>How to Recycle:</h1>
+        </div>
+        <script src="../static/js/scan.js"></script>
     </body>
 </html>
