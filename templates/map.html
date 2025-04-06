@@ -5,11 +5,22 @@
         <link rel="stylesheet" href="../static/css/map.css">
     </head>
     <body>
-        <iframe src="https://fairfaxgss.maps.arcgis.com/apps/instant/3dviewer/index.html?appid=ae37bfbc5c9745398860d079340b0d8e" width="1920" height="1080"style="border:0" allowfullscreen></iframe>
+        <div id="qrModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModalButton">&times;</span>
+                <h3>Scan this QR code to report</h3>
+                <img src="/images/QRCODE.png">
+            </div>
+        </div>
+
+        <div class="iframe-container">
+            <button class="overlay-button" id="openModalButton">Report</button>
+            <iframe src="https://fairfaxgss.maps.arcgis.com/apps/instant/3dviewer/index.html?appid=ae37bfbc5c9745398860d079340b0d8e" width="1520" height="825"style="border:0" allowfullscreen></iframe>
+        </div>
+        
         <div class="bottom-nav">
             <a href="/" class="tab">Home</a>
             <a href="/scan" class="tab">Scanner</a>
-            <a href="/report" class="tab">Report</a>
             <a href="/map" class="tab">Map</a>
         </div>
         <script src="../static/js/map.js"></script> 

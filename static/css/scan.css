@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   padding-bottom: 60px;
   max-height: 100vh;
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .bottom-nav {
@@ -56,7 +56,7 @@ body {
   font-size: 18px;
   padding: 10px 20px;
   margin-top:10px;
-  margin-left: 45%;
+  margin-left: 49%;
   cursor: pointer;
 }
 

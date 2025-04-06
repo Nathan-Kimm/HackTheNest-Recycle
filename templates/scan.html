@@ -7,19 +7,18 @@
     </head>
     <body>
         <video id="camera" autoplay playsinline></video>
-        <button id="captureButton">Take Photo</button>
+        <button id="captureButton" class="fa fa-camera"></button>
         <canvas id="canvas"></canvas>
 
         <div class="bottom-nav">
             <a href="/" class="tab">Home</a>
             <a href="/scan" class="tab">Scanner</a>
-            <a href="/report" class="tab">Report</a>
             <a href="./map" class="tab">Map</a>
         </div>
 
         <div class="info">
-            <h1>Material:</h1>
-            <h1>How to Recycle:</h1>
+            <h1 id="type"></h1>
+            <h1 id="recycle"></h1>
         </div>
         <script src="../static/js/scan.js"></script>
     </body>

@@ -5,7 +5,22 @@ function sendData(data){
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    });
+    })
+    .then(response => response.json())
+    .then(result => {
+        displayData(result.prediction);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function displayData(type){
+    plasticType = ["Plastic Type 1", "Plastic Type 2", "Plastic Type 3", 
+                   "Plastic Type 4", "Plastic Type 5", "Plastic Type 6",
+                   "Plastic Type 7", "Plastic Type 8"]
+    howToRecycle = ["h", "e", "l", "l", "l", "l", "l", "o"]
+
+    document.getElementById("type").innerHTML = "Plastic Type: " + plasticType[type - 1];
+    document.getElementById("recycle").innerHTML = "How to Recycle: " + howToRecycle[type - 1];
 }
 
 const current = location.pathname

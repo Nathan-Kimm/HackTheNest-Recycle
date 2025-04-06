@@ -5,9 +5,13 @@ import numpy as np
 import os
 from keras._tf_keras.keras.preprocessing import image
 import matplotlib.pyplot as plt
-
+from PIL import Image
+import base64
+import io
 
 def train_recycle_codes():
+    global model
+    global recycleLabels
     datasetRecycleCodesPath = "datasets"
 
     img_height = 180
@@ -38,12 +42,12 @@ def train_recycle_codes():
         tf.keras.layers.Dense(128, activation='relu'),
         tf.keras.layers.Dense(len(recycleLabels))
     ])
-
+    
     model.compile(optimizer='adam',
         loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
         metrics=['accuracy'])
 
-    model.fit(fullDataset, epochs=1)
+    model.fit(fullDataset, epochs=10)
 
 train_recycle_codes()
 
@@ -57,10 +61,6 @@ def index():
 def scan():
     return render_template('scan.html')
 
-@app.route('/report')
-def report():
-    return render_template('report.html')
-
 @app.route('/map')
 def map():
     return render_template('map.html')
@@ -69,8 +69,18 @@ def map():
 def submit():
     data = request.get_json()
     base64_image = data['image'].split(',')[1]
-    print(base64_image)
-    return jsonify({'message': 'Data received successfully'})
+    img_bytes = base64.b64decode(base64_image)
+    img = Image.open(io.BytesIO(img_bytes)).convert('RGB')
+    
+    img = img.resize((180, 180))
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0) / 255.0
+
+    predictions = model.predict(img_array)
+    predictedIndex = np.argmax(predictions[0])
+    predictedCode = recycleLabels[predictedIndex]
+
+    return jsonify({'prediction': predictedCode})
     
 if __name__ == '__main__':
     app.run(debug=True)
