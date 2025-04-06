@@ -47,12 +47,7 @@ body {
     justify-content: space-around;
     background-color: #007bff;
     color: white;
-    padding: 20px 0;
-  }
-
-  .label {
-    font-size: 24px;
-    font-weight: bold;
+    padding: 10px 0;
   }
 
   .articles-container {
@@ -69,12 +64,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 550px;
   }
 
   .resources {
     background: #e0e0e0;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     border-top: 1px solid #ccc;
     margin-bottom: 2.5%;
@@ -86,7 +81,7 @@ body {
 
   .resources a {
     text-decoration: none;
-    margin-right: 10%;
+    margin-right: 9%;
     color: #007bff;
   }
 

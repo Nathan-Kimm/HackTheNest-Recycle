@@ -14,10 +14,10 @@ function sendData(data){
 }
 
 function displayData(type){
-    plasticType = ["Plastic Type 1", "Plastic Type 2", "Plastic Type 3", 
-                   "Plastic Type 4", "Plastic Type 5", "Plastic Type 6",
-                   "Plastic Type 7", "Plastic Type 8"]
-    howToRecycle = ["h", "e", "l", "l", "l", "l", "l", "o"]
+    plasticType = ["#1 PETE (Polyethylene Terephthalate)", "#2 HDPE (High-Density Polyethylene)", "#3 PVC (Polyvinyl Chloride)", 
+                   "#4 LDPE (Low-Density Polyethylene)", "#5 PP (Polypropylene)", "#6 PS (Polystyrene)",
+                   "#7 PS (Polystyrene)", "#8 ABA (Acrylonitrile-butadiene-acrylate)"]
+    howToRecycle = ["RECYCLABLE - Widely recycled into new products like clothing, insulation, and containers.", "RECYCLABLE - Easily recycled into products like plastic lumber, recycling bins, and containers.", "NOT RECYCLABLE - Due to toxic chemicals, PVC is difficult to recycle, but it can sometimes be repurposed for things like tiles or flooring.", "RECYCLABLE - Less commonly recycled, but can be processed into new bags, floor tiles, or trash can liners.", "RECYCLABLE - Recycled into products like automotive parts, containers, and brooms.", "NOT RECYCLABLE - Polystyrene is often not recycled due to its fragility and difficulty in processing, though it can sometimes be turned into insulation or other items.", "NOT RECYCLABLE - This category includes a mix of plastics, some of which are difficult to recycle due to the variety of materials involved. However, some can be turned into plastic lumber or other custom products.", "NOT RECYCLABLE - Rigid plastic containers that are made with multiple types of plastics or materials that are difficult to recycle"]
 
     document.getElementById("type").innerHTML = "Plastic Type: " + plasticType[type - 1];
     document.getElementById("recycle").innerHTML = "How to Recycle: " + howToRecycle[type - 1];
